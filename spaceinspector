@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+
+import collections
+import re
+import sys
+
+def main():
+    for filename in sys.argv[1:]:
+        with open(filename, 'r') as file:
+            data = collections.defaultdict(int)
+            for line in file:
+                if line == '':
+                    continue
+                line = re.sub('\s*$', '', line)
+                line = re.sub('\S.*$', '', line)
+                if line == '':
+                    continue
+                line = repr(line). \
+                    replace('\\', ''). \
+                    replace('\'', ''). \
+                    replace(' ', 's'). \
+                    replace('t', 'Tttttttt')
+                data[line] += 1
+            print('{0}:'.format(filename))
+            for line in sorted(data, key=len):
+                print(' ', line, data[line])
+        print()
+
+if __name__ == '__main__':
+    main()
+
+# vim:ts=4 sw=4 et
