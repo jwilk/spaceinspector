@@ -6,7 +6,7 @@ import sys
 
 def main():
     for filename in sys.argv[1:]:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='ASCII', errors='replace') as file:
             data = collections.defaultdict(int)
             for line in file:
                 line = re.sub('\s*$', '', line)
