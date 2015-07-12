@@ -9,8 +9,8 @@ def main():
         with open(filename, 'r', encoding='ASCII', errors='replace') as file:
             data = collections.defaultdict(int)
             for line in file:
-                line = re.sub('\s*$', '', line)
-                line = re.sub('\S.*$', '', line)
+                line = re.sub(r'\s*$', '', line)
+                line = re.sub(r'\S.*$', '', line)
                 if line == '':
                     continue
                 line = repr(line). \
