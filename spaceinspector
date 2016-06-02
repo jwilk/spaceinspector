@@ -14,8 +14,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('paths', metavar='PATH', nargs='+')
     options = ap.parse_args()
-    for filename in options.paths:
-        with open(filename, 'r', encoding='ASCII', errors='replace') as file:
+    for path in options.paths:
+        with open(path, 'r', encoding='ASCII', errors='replace') as file:
             data = collections.defaultdict(int)
             for line in file:
                 line = re.sub(r'\s*$', '', line)
@@ -28,7 +28,7 @@ def main():
                     replace(' ', 's'). \
                     replace('t', 'Tttttttt')
                 data[line] += 1
-            print('{0}:'.format(filename))
+            print('{0}:'.format(path))
             for line in sorted(data, key=len):
                 print(' ', line, data[line])
         print()
