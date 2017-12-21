@@ -1,0 +1,13 @@
+.. code:: console
+
+   $ spaceinspector /usr/bin/ldd
+   /usr/bin/ldd:
+     ss 45
+     ssss 48
+     sssss 1
+     ssssss 14
+     sssssss 1
+     Tttttttt 5
+     Ttttttttss 5
+
+.. vim:ft=rst ts=3 sts=3 sw=3 et
