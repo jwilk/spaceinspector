@@ -27,7 +27,7 @@ def main():
                     replace(' ', 's'). \
                     replace('t', 'Tttttttt')
                 data[line] += 1
-            print('{0}:'.format(path))
+            print(f'{path}:')
             for line in sorted(data, key=len):
                 print(' ', line, data[line])
         print()
