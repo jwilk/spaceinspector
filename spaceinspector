@@ -7,6 +7,8 @@ import argparse
 import collections
 import re
 
+0_0  # Python >= 3.6 is required
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('paths', metavar='PATH', nargs='+')
